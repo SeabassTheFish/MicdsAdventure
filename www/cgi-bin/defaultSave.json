@@ -1,0 +1,31 @@
+{
+    "Items": [
+        {
+            "id": "IPR",
+            "Name": "Paper",
+            "Lore": "A piece of paper with writing on it",
+            "Start": "ALT-ANE",
+            "Inspect": "Welcome to Dungeon!",
+            "Location": 0,
+            "Value": 0,
+            "Created": "2020-4-26 21:00:00.123456"
+        },
+        {
+            "id": "SGN",
+            "Name": "Sign",
+            "Lore": "A sign with writing on it",
+            "Start": "ALT-FGP",
+            "Inspect": "Speak the name of he who waits#Who keeps us home and keeps us safe#Beware, a dark secret herin lies#So journey forth to your demise",
+            "Location": 0,
+            "Value": 0,
+            "Created": "2020-5-6 20:00:00.000000"
+        }
+    ],
+    "NPCs": [
+    ],
+    "Containers": [],
+    "Current Room": "ALT-ANE",
+    "Inventory": [],
+    "Wearing": [],
+    "Last Update": "2020-5-6 20:00:00.000000"
+}

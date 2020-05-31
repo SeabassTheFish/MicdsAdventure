@@ -1,0 +1,51 @@
+[
+    {
+        "action": "add",
+        "type": "room",
+        "addition": {
+            "id": "OLN-OSY",
+            "Name": "Olson Statues",
+            "Lore": "This is the place where that one dude is playing a recorder"
+        },
+        "entry-made": "2020-5-10 0:31:00.000000"
+    },
+    {
+        "action": "modify",
+        "type": "room",
+        "modification": {
+            "id": "MAY-MSD",
+            "Lore": "This is not a room anymore"
+        },
+        "entry-made": "2020-5-11 0:4:00.000000"
+    },
+    {
+        "action": "delete",
+        "type": "room",
+        "deletion": {
+            "id": "LDU-LDW"
+        },
+        "entry-made": "2020-5-13 22:06:00.000000"
+    },
+    {
+        "action": "add",
+        "type": "item",
+        "addition": {
+            "id": "TIA",
+            "Name": "Test Item Again",
+            "Lore": "Another test item",
+            "Start": "ALT-ASW",
+            "Inspect": "",
+            "Location": 0,
+            "Value": 0
+        },
+        "entry-made": "2020-5-27 18:32:00.000000"
+    },
+    {
+        "action": "delete",
+        "type": "item",
+        "deletion": {
+            "id": "TIA"
+        },
+        "entry-made": "2020-5-31 14:00:00.0000"
+    }
+]

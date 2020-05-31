@@ -1,0 +1,50 @@
+<!-- DOCTYPE html -->
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background: #000;
+      }
+      #container {
+        position: absolute;
+        left: 0;
+        width: 100%
+      }
+      #content {
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+      }
+      h1, p, label {
+        text-align: center;
+        color: white;
+      }
+      form {
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="content">
+        <h1>Welcome to the MICDS Quarantine Adventure!</h1>
+        <p>Please log in or create an account</p>
+        <form action="/cgi-bin/authPlayer.py" method="POST">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Username"></input>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Password"></input>
+          <input type="submit" id="submit"></input>
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $("#submit").click(function() {
+          alert("No errors here");
+      });
+    </script>
+  </body>
+</html>

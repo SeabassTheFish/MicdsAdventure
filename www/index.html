@@ -1,0 +1,282 @@
+<html>
+  <head>
+    <title>MICDS Quarantine Adventure</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script> <style>
+      body {
+        margin: 0;
+        background: #000;
+      }
+      h1, p, label {
+        color: white;
+        text-align: center;
+      }
+      #container {
+        position: absolute;
+        left: 0;
+        width: 100%;
+      }
+      #content {
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      ul {
+        background: #000;
+        list-style-type: none;
+        padding: 0;
+      }
+      li.input-text {
+        font-family: 'Lucida Console', Monaco, monospace;
+        font-weight: bold;
+        padding: 10px;
+        color: #fff;
+      }
+      li.output-text {
+        font-family: courier;
+        color: #3f3;
+      }
+      #game {
+        display: none;
+      }
+      #register {
+        display: none;
+      }
+      span#register-link {
+        color: #aaa;
+      }
+      #login-form input.box {
+        width: 300px;
+      }
+      div#login-boxes {
+        width: 320px;
+        padding: 10px;
+        margin: 0 auto;
+      }
+      div#help {
+        display: none;
+        background: #fff;
+        float: right;
+      }
+      div#help p {
+        color: #000;
+      }
+    </style>
+    <script>
+      var global_session_id = 'e';
+      var pageState = 0; // 0 is login, 1 is register, 2 is play
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="help">
+        <p id="help-text"></p>
+      </div>
+      <div id="content">
+        <div id="register">
+          <h1>Welcome to the MICDS Quarantine Adventure!</h1>
+          <p>This is the register page</p>
+          <p><a id="back" style="color: #08f">Back</a></p>
+          <form id="register-form" method="POST" onsubmit="return false">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname" placeholder="First Name"></input>
+            <br />
+            <br />
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Last Name"></input>
+            <br />
+            <br />
+            <label for="grade-level">Grade Level:</label>
+            <select id="grade-level" name="grade-level">
+              <option selected>-- Select One --</option>
+              <option value="2023">Class of 2023</option>
+              <option value="2022">Class of 2022</option>
+              <option value="2021">Class of 2021</option>
+              <option value="2020">Class of 2020</option>
+              <option value="1918">Faculty / Staff</option>
+            </select>
+            <br />
+            <br />
+            <label for="proposed-username">Username:</label>
+            <input type="text" id="proposed-username" name="proposed-username" placeholder="Username"></input>
+            <br />
+            <br />
+            <label for="proposed-password">Password:</label>
+            <input type="password" id="proposed-password" name="proposed-password"></input>
+            <br />
+            <br />
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password"></input>
+            <br />
+            <br />
+            <input type="submit" value="Submit"></input>
+          </form>
+        </div>
+        <div id="login">
+          <h1>Welcome to the MICDS Quarantine Adventure!</h1>
+          <p>Please log in or <span id="register-link" style="color: #08f">create an account</span></p>
+          <div id='login-boxes'>
+            <form id="login-form" action="/cgi-bin/authPlayer.py" method="POST" onsubmit="return false">
+              <input type="text" class='box' id="username" name="username" placeholder="Username"></input>
+              <br />
+              <br />
+              <input type="password" class='box' id="password" name="password" placeholder="Password"></input>
+              <br />
+              <br />
+              <div style="margin: auto; width: 100px; padding: 0">
+                <input type="submit" id="submit" value=' Login ' style='width: 100px; margin: auto;'></input>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="game">
+          <h1>MICDS Quarantine Adventure</h1>
+
+          <p>Welcome to the 2020 MICDS Quarantine Adventure.</p>
+          <p id="output">You are in a maze of twisty passages, all alike.</p>
+          <ul id="readout">
+          </ul>
+          <input type="text" id="inputBox" style="width: 500px"></input>
+        </div>
+      </div>
+    </div>
+
+    <script type='text/javascript'>
+      $(document).ready(function() {
+        $("#username").focus();
+        var showHelp = false;
+        var switchState = function(newState) {
+          pageState = newState
+          console.log("switchState newState = [" + newState + "]");
+          switch (newState) {
+            case 0:
+              $("#login").show();
+              $("#register").hide();
+              $("#game").hide();
+              $("#username").focus();
+              break;
+            case 1:
+              $("#register").show();
+              $("#login").hide();
+              $("#game").hide();
+              break;
+            case 2:
+              $("#game").show();
+              $("#inputBox").focus();
+              $("#login").hide();
+              $("#register").hide();
+
+              if (global_session_id != '') {
+                var initial_data = {};
+                initial_data['session_id'] = global_session_id;
+                initial_data['input_text'] = "look";
+                $.ajax({url: "/cgi-bin/interact.py", data: initial_data, type: "post"}).done(function(msg) {runGame(msg, initial_data, true)});
+              }
+              break;
+          }
+        }
+
+        var runGame = function(msg, input_data, initial) {
+            $("#help-text").val("Hjelp me!");
+
+            // Output text is what the game spits back, input text is what the user typed
+            try {
+              if (msg["error"]) {
+                throw msg["message"];
+              } else {
+                var outputText = msg['message'];
+                if (input_data["input_text"].toLowerCase().search("help") != -1) {
+                  showHelp = !showHelp;
+                }
+                if (showHelp) {
+                  $("#help-text").text("Hjelp!");
+                  $("#help").show();
+                } else {
+                  $("#help").hide();
+                }
+              }
+            }
+            catch(err) {
+              console.log(err);
+              var outputText = ["Sorry, we had a problem server-side! Please contact sneumann@micds.org and describe what went wrong."];
+            }
+
+            // Adding input, then output
+            if (!initial) {
+              $("#readout").append("<li class='input-text'>" + input_data['input_text'] + "</li>");
+            }
+
+            for (var i = 0; i < outputText.length; ++i) {
+              var outputSection = outputText[i];
+              $("#readout").append("<li class='output-text'>" + outputSection + "</li>");
+            }
+
+            // Deleting stuff at the top when the length gets above 30 for the scrolly effect
+            while ($("#readout li").length > 30) {
+              $("#readout li").first().remove();
+            }
+
+            // Reset the input box
+            $("#inputBox").val('');
+        }
+        $("#register-link").click(function(e) {
+          switchState(1);      
+        });
+        $("#back").click(function(e) {
+          switchState(0); 
+        });
+        $("#login-form").submit(function(e) {
+          e.preventDefault();
+          $.ajax({url: '/cgi-bin/authPlayer.py', data: {"username": $("#username").val(), "password": $("#password").val()}, type: "post"})
+            .done(function(msg) {
+              if (msg["response"]["status"]) {
+                console.log("session id from login = [" + msg["response"]["session"] + "]");
+                global_session_id = msg["response"]["session"];
+                switchState(2);
+              } else {
+                alert("The password is incorrect.");
+                console.log("Error Message: " + msg["response"]["message"]);
+                $("#password").val('');
+                $("#username").val('');
+                $("#username").focus();
+              }
+            });    
+        });
+        $("#register-form").submit(function(e) {
+          e.preventDefault();
+          if ($("#proposed-password").val() != $("#confirm-password").val()) {
+            alert("The passwords do not match");
+            return;
+          }
+          $.ajax({url: 'cgi-bin/registerPlayer.py', data: {"firstname": $("#firstname").val(), "lastname": $("#lastname").val(), "grade-level": parseInt($("#grade-level").val()), "username": $("#proposed-username").val(), "password": $("#proposed-password").val()}, type: "post"})
+            .done(function(msg) {
+              if (msg["message"]["success"]) {
+                switchState(0);
+                alert("Thank you for registering! Please log in with your account to begin.");
+              } else {
+                alert("Looks like something went wrong on the server side! Please contact sneumann@micds.org and describe the problem");
+              }
+            });    
+        });
+        var inputText = '';
+        var outputText = '';
+
+        // Making sure the input box is selected first thing
+        $("#inputBox").focus();
+
+        // Happens whenever the user presses enter
+        $("#inputBox").keypress(function(event) {
+          var keycode = (event.keyCode ? event.keyCode : event.which);
+          if (keycode == 13 && $("#inputBox").val() != '') {
+            // Where the magic happens
+            var input_data = {};
+            input_data['session_id'] = global_session_id;
+            input_data['input_text'] = $("#inputBox").val();
+            $.ajax({url: '/cgi-bin/interact.py', data: input_data, type: "post"})
+              .done(function(msg) {runGame(msg, input_data, false)});
+          }
+        });
+    });
+      
+    </script>
+  </body>
+</html>

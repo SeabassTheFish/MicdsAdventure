@@ -1,0 +1,3 @@
+tail /var/log/httpd-error.log to see the CGI errors
+
+rsync -ai --delete ./ www@text1:/usr/www/hosted/quarantine/ to put stuff up on the website

@@ -1,0 +1,256 @@
+{
+	"Rooms": [
+		{
+			"id": "ALT-ANE",
+			"Name": "A-Lot Northeast",
+			"Lore": "This is the northeast part of A-Lot. You can see the exit onto Warson to the east, but you know you're not allowed to leave school during the day. The rest of A-Lot is to the south and west."
+		},
+		{
+			"id": "ALT-ASE",
+			"Name": "A-Lot Southeast",
+			"Lore": "This is the southeast part of A-Lot. To the southwest you see the flagpole. The rest of A-Lot is to the north and west."
+		},
+		{
+			"id": "ALT-ASW",
+			"Name": "A-Lot Southwest",
+			"Lore": "This is the southwest part of A-Lot. To the southeast you see the flagpole. The rest of A-Lot is to the north and east."
+		},
+		{
+			"id": "ALT-ANW",
+			"Name": "A-Lot Northwest",
+			"Lore": "This is the northwest part of A-Lot. The rest of A-Lot is to the south and east."
+		},
+		{
+			"id": "ALT-FGP",
+			"Name": "Flagpole",
+			"Lore": "This is the flagpole. A-Lot is to the north and MICDS proper is to the south."
+		},
+		{
+			"id": "WRN-WSN",
+			"Name": "Warson North",
+			"Lore": "This is the north end of Warson road. You can see the entrance to A-Lot to the west and the road continues south."
+		},
+		{
+			"id": "WRN-WSM",
+			"Name": "Warson Road",
+			"Lore": "You are in the middle of Warson road. To the west is the entrance to the Olson Circle and the road continues north and south."
+		},
+		{
+			"id": "WRN-WSS",
+			"Name": "Warson South",
+			"Lore": "This is the intersection of Warson and Ladue. To the west is Ladue road and Warson continues to the north."
+		},
+		{
+			"id": "LDU-LDR",
+			"Name": "Ladue Road",
+			"Lore": "This is Ladue road. The road continues to the east and west."
+		},
+		{
+			"id": "LDU-LDW",
+			"Name": "Ladue West",
+			"Lore": "This is the west end of Ladue Road. The entrance to C-Lot is to the north, and the road continues east."
+		},
+		{
+			"id": "CLT-CSW",
+			"Name": "C-Lot Southwest",
+			"Lore": "This is the southwest part of C-Lot, which exits to Ladue road to the south. You can see the entrance to the middle school to the northeast."
+		},
+		{
+			"id": "CLT-MSE",
+			"Name": "Middle School Entrance",
+			"Lore": "This is the entrance to the middle school, which you can enter by going north. Since it's off limits for this game, entering here will take you to the Olson Courtyard."
+		},
+		{
+			"id": "OLN-OCW",
+			"Name": "Olson Courtyard",
+			"Lore": "This is the courtyard of Olson. In the distance you can see May hall to the north STEM even further to the north. To the east you see Olson Hall itself."
+		},
+		{
+			"id": "MAY-MDS",
+			"Name": "May Doors South",
+			"Lore": "These are the doors on the outside of May (on the south side). To the east you see the entrance to Orthwein Theatre and to the southeast you see the north doors of Olson Hall."
+		}
+	],
+	"Exits": [
+		{
+			"From": "ALT-ANE",
+			"To": "ALT-ANW",
+			"Direction": "WEST"
+		},
+		{
+			"From": "ALT-ANE",
+			"To": "ALT-ASE",
+			"Direction": "SOUTH"
+		},
+		{
+			"From": "ALT-ANE",
+			"To": "ALT-ASW",
+			"Direction": "SOUTHWEST"
+		},
+		{
+			"From": "ALT-ANE",
+			"To": "WRN-WSN",
+			"Direction": "EAST"
+		},
+		{
+			"From": "ALT-ANW",
+			"To": "ALT-ANE",
+			"Direction": "EAST"
+		},
+		{
+			"From": "ALT-ANW",
+			"To": "ALT-ASE",
+			"Direction": "SOUTHEAST"
+		},
+		{
+			"From": "ALT-ANW",
+			"To": "ALT-ASW",
+			"Direction": "SOUTH"
+		},
+		{
+			"From": "ALT-ASW",
+			"To": "ALT-ANW",
+			"Direction": "NORTH"
+		},
+		{
+			"From": "ALT-ASW",
+			"To": "ALT-ASE",
+			"Direction": "EAST"
+		},
+		{
+			"From": "ALT-ASW",
+			"To": "ALT-ANE",
+			"Direction": "NORTHEAST"
+		},
+		{
+			"From": "ALT-ASW",
+			"To": "ALT-FGP",
+			"Direction": "SOUTHEAST"
+		},
+		{
+			"From": "ALT-ASE",
+			"To": "ALT-ASW",
+			"Direction": "WEST"
+		},
+		{
+			"From": "ALT-ASE",
+			"To": "ALT-ANE",
+			"Direction": "NORTH"
+		},
+		{
+			"From": "ALT-ASE",
+			"To": "ALT-ANW",
+			"Direction": "NORTHWEST"
+		},
+		{
+			"From": "ALT-ASE",
+			"To": "ALT-FGP",
+			"Direction": "SOUTHWEST"
+		},
+		{
+			"From": "WRN-WSN",
+			"To": "WRN-WSM",
+			"Direction": "SOUTH"
+		},
+		{
+			"From": "WRN-WSN",
+			"To": "ALT-ANE",
+			"Direction": "WEST"
+		},
+		{
+			"From": "WRN-WSM",
+			"To": "WRN-WSN",
+			"Direction": "NORTH"
+		},
+		{
+			"From": "WRN-WSM",
+			"To": "WRN-WSS",
+			"Direction": "SOUTH"
+		},
+		{
+			"From": "WRN-WSS",
+			"To": "WRN-WSM",
+			"Direction": "NORTH"
+		},
+		{
+			"From": "WRN-WSS",
+			"To": "LDU-LDR",
+			"Direction": "WEST"
+		},
+		{
+			"From": "LDU-LDR",
+			"To": "WRN-WSS",
+			"Direction": "EAST"
+		},
+		{
+			"From": "LDU-LDR",
+			"To": "LDU-LDW",
+			"Direction": "WEST"
+		},
+		{
+			"From": "LDU-LDW",
+			"To": "LDU-LDR",
+			"Direction": "EAST"
+		},
+		{
+			"From": "LDU-LDW",
+			"To": "CLT-CSW",
+			"Direction": "NORTH"
+		},
+		{
+			"From": "CLT-CSW",
+			"To": "LDU-LDW",
+			"Direction": "SOUTH"
+		},
+		{
+			"From": "CLT-CSW",
+			"To": "CLT-MSE",
+			"Direction": "NORTHEAST"
+		},
+		{
+			"From": "CLT-MSE",
+			"To": "OLN-OCW",
+			"Direction": "NORTH"
+		}
+	],
+	"Items": [
+		{
+			"id": "CNS",
+			"Name": "Coins",
+			"Lore": "A pouch full of coins",
+			"Start": "ALT-ANE",
+			"Value": 50,
+			"Location": 0
+		},
+		{
+			"id": "THT",
+			"Name": "Test Helmet",
+			"Lore": "A test helmet",
+			"Start": "ALT-ANE",
+			"Value": 0,
+			"Location": 1
+		}
+	],
+	"NPCs": [
+		{
+			"id": "DMY",
+			"Name": "Dummy",
+			"Dialogue": [
+				{
+					"Who are you?": "I am Dummy"
+				},
+				{
+					"Why are you?": "Good question"
+				}
+			],
+			"AI": 0,
+			"Health": -1,
+			"Current Room": "ALT-ANE"
+		}
+	],
+	"Containers": [],
+	"Current Room": "",
+	"Inventory": [],
+	"Wearing": {}
+}
+

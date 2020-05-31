@@ -1,0 +1,103 @@
+{
+    "Rooms": [
+        {
+            "id": "ALT-ANE",
+            "Name": "A-Lot Northeast",
+            "Lore": "This is the northeast part of A-Lot. You can see the exit onto Warson to the east, but you know you're not allowed to leave school during the day. The rest of A-Lot is to the south and west.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "ALT-ASE",
+            "Name": "A-Lot Southeast",
+            "Lore": "This is the southeast part of A-Lot. To the southwest you see the flagpole. The rest of A-Lot is to the north and west.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "ALT-ASW",
+            "Name": "A-Lot Southwest",
+            "Lore": "This is the southwest part of A-Lot. To the southeast you see the flagpole. The rest of A-Lot is to the north and east.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "ALT-ANW",
+            "Name": "A-Lot Northwest",
+            "Lore": "This is the northwest part of A-Lot. The rest of A-Lot is to the south and east.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "ALT-FGP",
+            "Name": "Flagpole",
+            "Lore": "This is the flagpole. A-Lot is to the north and MICDS proper is to the south.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "WRN-WSN",
+            "Name": "Warson North",
+            "Lore": "This is the north end of Warson road. You can see the entrance to A-Lot to the west and the road continues south.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "WRN-WSM",
+            "Name": "Warson Road",
+            "Lore": "You are in the middle of Warson road. To the west is the entrance to the Olson Circle and the road continues north and south.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "WRN-WSS",
+            "Name": "Warson South",
+            "Lore": "This is the intersection of Warson and Ladue. To the west is Ladue road and Warson continues to the north.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "LDU-LDR",
+            "Name": "Ladue Road",
+            "Lore": "This is Ladue road. The road continues to the east and west.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "LDU-LDW",
+            "Name": "Ladue West",
+            "Lore": "This is the west end of Ladue Road. The entrance to C-Lot is to the north, and the road continues east.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "CLT-CSW",
+            "Name": "C-Lot Southwest",
+            "Lore": "This is the southwest part of C-Lot, which exits to Ladue road to the south. You can see the entrance to the middle school to the northeast.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "CLT-MSE",
+            "Name": "Middle School Entrance",
+            "Lore": "This is the entrance to the middle school, which you can enter by going north. Since it's off limits for this game, entering here will take you to the Olson Courtyard.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "OLN-OCW",
+            "Name": "Olson Courtyard",
+            "Lore": "This is the courtyard of Olson. In the distance you can see May hall to the north STEM even further to the north. To the east you see Olson Hall itself.",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "MAY-MSD",
+            "Name": "May South Doors",
+            "Lore": "These are the doors on the south side of May Hall",
+            "Created": "2020-5-9 18:00:00.000000"
+        }
+    ],
+    "Exits": [
+        {
+            "id": "ALT-ANE:ALT-ANW:W",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "ALT-ANE:ALT-ASE:S",
+            "Created": "2020-5-7 12:00:00.000000"
+        },
+        {
+            "id": "ALT-ANE:ALT-ASW:SW",
+            "Created": "2020-5-7 12:00:00.000000"
+        }
+    ],
+    "Last Update": "2020-05-09 18:18:00.000000"
+}

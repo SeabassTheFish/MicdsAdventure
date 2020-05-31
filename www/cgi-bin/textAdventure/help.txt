@@ -1,0 +1,37 @@
+This is the help page for the MICDS Quarantine Adventure! Here you will find a list of commands that you (the "player") can use to control your avatar (the "character").
+Any abbreviated version of the command will be in parentheses.
+
+Movement:#
+* north (n): Moves the character north#
+* south (s): Moves the character south#
+* east (e): Moves the character east#
+* west (w): Moves the character west#
+* northeast (ne): Moves the character northeast#
+* southeast (se): Moves the character southeast#
+* northwest (nw): Moves the character northwest#
+* southwest (sw): Moves the character southwest#
+* up (u): Moves the character up#
+* down (d): Moves the character down#
+* in: Moves the character in#
+* out: Moves the character out#
+#
+Sensing:#
+* look (l): Prints the room name and description again, along with any items that may be in the room#
+* compass: Prints all the directions the character can move on a nice little graphic#
+* inventory (i): Prints any items the character is holding#
+* wearing: Prints any items the character is wearing and where they are worn#
+#
+Item Interaction:#
+* take <item>: If that item is in the room, the character takes it and puts it in their inventory#
+* drop <item>: If that item is in the character's inventory, the character puts it in the room#
+* use <item>: If that item has a use, it is used.#
+* don <item>: If that item can be worn, the character puts it on#
+* doff <item>: If that item is being worn, the character takes it off and puts it in their inventory#
+#
+Non-Player Character (NPC) Interaction:#
+* talk <npc>: Opens dialogue options for that npc#
+* fight <npc> [with <item>]: Attacks the npc. If an item is given, the character uses that item. Otherwise, it is assumed the character uses hand-to-hand combat.#
+#
+General:#
+* help (?): Prints this page#
+ 
